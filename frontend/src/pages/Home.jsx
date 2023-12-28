@@ -49,7 +49,7 @@ const Home = () => {
 
     
     try {
-      const uri = file && (await handleFileUpload(file, 'image'));
+      const uri = file && (await handleFileUpload(file));
 
       const newData = uri ?  { ...data, image: uri }: data
       const res = await apiRequest({
@@ -75,10 +75,6 @@ const Home = () => {
     }
    
   };
-
-
-
-
 
 
     const fetchPost = async () => {
@@ -211,21 +207,31 @@ const Home = () => {
               )}
 
               <div className='flex items-center justify-between py-4'>
-                <label
-                  htmlFor='imgUpload'
-                  className='flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer'
-                >
-                  <input
-                    type='file'
-                    onChange={(e) => setFile(e.target.files[0])}
-                    className='hidden'
-                    id='imgUpload'
-                    data-max-size='5120'
-                    accept='.jpg, .png, .jpeg'
-                  />
-                  <BiImages />
-                  <span>Image</span>
-                </label>
+              <label
+  htmlFor='imgUpload'
+  className='flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer'
+>
+  {file ? (
+    <>
+      <BiImages/>
+      <span>{file.name}</span>
+    </>
+  ) : (
+    <>
+      <BiImages />
+      <p>Image</p>
+    </>
+  )}
+  <input
+    type='file'
+    onChange={(e) => setFile(e.target.files[0])}
+    className=''
+    id='imgUpload'
+    data-max-size='5120'
+    accept='.jpg, .png, .jpeg'
+    style={{ display: 'none' }}
+  />
+</label>
 
                 <label
                   className='flex items-center gap-1 text-base text-ascent-2 hover:text-ascent-1 cursor-pointer'

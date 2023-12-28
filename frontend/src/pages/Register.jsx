@@ -56,12 +56,11 @@ const Register = () => {
         {/* LEFT */}
         <div className="w-full lg:w-1/2 h-full p-10 2xl:px-20 flex flex-col justify-center ">
           <div className="w-full flex gap-2 items-center mb-6">
-            <div className="p-2 bg-[#065ad8] rounded text-white">
-              <TbSocial />
+            <div className="p-1 bg-[#065ad8] rounded text-white">
+            <img className="logo w-5" src ="https://upload.wikimedia.org/wikipedia/en/e/e9/I._K._Gujral_Punjab_Technical_University_logo.png"></img>
             </div>
-            <span className="text-2xl text-[#065ad8] font-semibold">
-              ShareFun
-            </span>
+            <span className='text-xl md:text-2xl text-[#065ad8] font-semibold'>
+          PTU<span className="text-lg font-bold md:text-xl text-[#e53e3e]">BUZZ</span></span>
           </div>
 
           <p className="text-ascent-1 text-base font-semibold">
@@ -204,10 +203,10 @@ const Register = () => {
 
           <div className="mt-16 text-center">
             <p className="text-white text-base">
-              Connect with friedns & have share for fun
+            Connect with PTU-Buzz & be part of the Buzz on campus.
             </p>
             <span className="text-sm text-white/80">
-              Share memories with friends and the world.
+            Share your memories, study and work with your campus mates.
             </span>
           </div>
         </div>
